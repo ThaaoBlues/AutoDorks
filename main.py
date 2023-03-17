@@ -38,7 +38,7 @@ def download_json_templates(repo_url):
 # Setup function to download JSON templates from the GitHub repository
 def setup():
     print("Downloading JSON templates from GitHub repository...")
-    download_json_templates(json_repo_url)
+    #download_json_templates(json_repo_url)
     print("Done.")
 
 
@@ -68,7 +68,7 @@ def main(args):
 
 
     print("[I] checking templates...")
-
+    
     # Check if the JSON templates are present in the current directory
     with urllib.request.urlopen(args.repo_url) as url:
 
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     parser.add_argument('--json_template', '-t', type=str, default='commons.json', help='JSON template file containing the Google Dorks to use')
     parser.add_argument('--url', '-u', type=str, default=None, help='URL of the website to search for (optional)')
     parser.add_argument('--open', '-o', action='store_true', help='Open search results in browser (optional)')
-    parser.add_argument('--repo_url', '-r', type=str, default='https://api.github.com/repos/thaaoblues/autodorks/contents', help="URL of the GitHub repository containing the JSON templates (optional)")
+    parser.add_argument('--repo_url', '-r', type=str, default=json_repo_url, help="URL of the GitHub repository containing the JSON templates (optional)")
     parser.add_argument('--list-templates', '-ls', type=str, help='List all the templates locally availables.')
 
     args = parser.parse_args()
