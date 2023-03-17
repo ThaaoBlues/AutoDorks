@@ -1,0 +1,34 @@
+{
+    "dorks": [
+        {
+            "name": "Files Containing Passwords",
+            "query": "filetype:txt intext:password",
+            "rating": "high"
+        },
+        {
+            "name": "Files Containing Usernames",
+            "query": "filetype:txt intext:username",
+            "rating": "medium"
+        },
+        {
+            "name": "Files Containing Sensitive Information",
+            "query": "filetype:txt intext:\"social security number\" OR \"credit card number\" OR \"password\"",
+            "rating": "high"
+        },
+        {
+            "name": "Exposed Git Repositories",
+            "query": "intitle:index.of \".git\"",
+            "rating": "critical"
+        },
+        {
+            "name": "Vulnerable WordPress Sites",
+            "query": "inurl:wp-content/ uploads",
+            "rating": "high"
+        },
+        {
+            "name": "Vulnerable Joomla Sites",
+            "query": "inurl:com_",
+            "rating": "medium"
+        }
+    ]
+}
