@@ -6,14 +6,15 @@ import urllib.request
 from webbrowser import open as web_open
 from re import search as re_search
 import argparse
-from time import sleep
 from bs4 import BeautifulSoup
+from os import path, mkdir
+
 
 # Output file name
 output_file = 'google_dorks_search_results.txt'
 
 # GitHub repository containing the JSON templates
-json_repo_url = 'https://api.github.com/repos/thaooblues/autodorks/contents/json'
+json_repo_url = 'https://api.github.com/repos/thaaoblues/autodorks/contents/templates/'
 
 
 
@@ -23,6 +24,9 @@ def download_json_templates(repo_url):
 
     with urllib.request.urlopen(repo_url) as url:
 
+        # check if we have created the templates folder
+        if not path.exists("templates"):
+            mkdir("templates")
 
         data = loads(url.read().decode())
 
@@ -33,7 +37,7 @@ def download_json_templates(repo_url):
                 url = file['download_url']
                 with urllib.request.urlopen(url) as url:
                     data = url.read().decode()
-                    with open(filename, 'w') as f:
+                    with open(f"templates/{filename}", 'w') as f:
                         f.write(data)
 
 # Setup function to download JSON templates from the GitHub repository
@@ -104,7 +108,7 @@ def main(args):
 
     print("[I] checking templates...")
     
-    """# Check if the JSON templates are present in the current directory
+    # Check if the JSON templates are present in the current directory
     with urllib.request.urlopen(args.repo_url) as url:
 
 
@@ -115,17 +119,26 @@ def main(args):
             for file in data:
                 if file['name'].endswith('.json'):
                     filename = file['name']
-                    if not os.path.exists(filename):
+                    if not os.path.exists(f"templates/{filename}"):
                         
                         print("[I] found missing template, downloading...")
 
                         download_json_templates(args.repo_url)
                         break
-"""
+
+
+    # check if user just want to list availables templates
+    if args.list_templates:
+
+        print(os.listdir("templates"))
+        return
+
+
+
 
 
     # Load the selected JSON template
-    with open(args.json_template) as f:
+    with open(f"templates/{args.json_template}") as f:
         dorks = loads(f.read())
 
 
@@ -198,12 +211,12 @@ if __name__ == '__main__':
 
 
     parser = argparse.ArgumentParser(description='Automate Google Dorks')
-    parser.add_argument('query', help='The search query to use with the dorks')
+    parser.add_argument('--query','-q',default='', help='The search query to use with the dorks')
     parser.add_argument('--json_template', '-t', type=str, default='commons.json', help='JSON template file containing the Google Dorks to use')
     parser.add_argument('--url', '-u', type=str, default=None, help='URL of the website to search for (optional)')
     parser.add_argument('--open', '-o', action='store_true', help='Open search results in browser (optional)')
     parser.add_argument('--repo_url', '-r', type=str, default=json_repo_url, help="URL of the GitHub repository containing the JSON templates (optional)")
-    parser.add_argument('--list-templates', '-ls', type=str, help='List all the templates locally availables.')
+    parser.add_argument('--list_templates', '-ls', action='store_true', help='List all the templates locally availables.')
 
     args = parser.parse_args()
 
