@@ -1,0 +1,12 @@
+{
+    "name": "Find Phone Number Owner",
+    "description": "Find the owner of a phone number.",
+    "rating": "medium",
+    "dorks": [
+      "intext:\"Name:\" OR intext:\"Full Name:\" OR intext:\"First Name:\" OR intext:\"Last Name:\" site:linkedin.com",
+      "intext:\"Owner:\" OR intext:\"Name:\" site:facebook.com",
+      "intext:\"Name:\" OR intext:\"Phone:\" site:twitter.com",
+      "intext:\"Name:\" OR intext:\"Phone:\" site:instagram.com",
+      "intext:\"Name:\" OR intext:\"Phone:\" site:pinterest.com"
+    ]
+  }

@@ -1,0 +1,22 @@
+{
+    "name": "Find Phone Number",
+    "description": "Find phone numbers associated with a website.",
+    "rating": "medium",
+    "dorks": [
+      "intext:\"Phone Number\" OR intext:\"Contact Us\" ",
+      "intext:\"Tel:\" ",
+      "intext:\"Tel: \" ",
+      "intext:\"Telephone:\" ",
+      "intext:\"Telephone: \" ",
+      "intext:\"Ph: \" ",
+      "intext:\"Phone: \" ",
+      "intext:\"Call: \" ",
+      "intext:\"Contact: \" ",
+      "intext:\"Mobile: \" ",
+      "intext:\"Cell: \" ",
+      "intext:\"Fax: \" ",
+      "intext:\"Hotline: \" ",
+      "intext:\"Ring: \" "
+    ]
+  }
+  
