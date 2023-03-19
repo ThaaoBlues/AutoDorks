@@ -37,6 +37,12 @@
             "name": "Database Files",
             "query": "intitle:\"index of\" \"database\"",
             "rating": "High"
+        },
+        
+        {
+            "name": "Hidden Text Files",
+            "query": "intext:\"index of\" \"/.txt\"",
+            "rating": "medium"
         }
     ]
 }

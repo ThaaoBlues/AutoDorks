@@ -1,0 +1,22 @@
+{
+    "name": "Find Open Ports",
+    "description": "Find open ports on a target system.",
+    "rating": "high",
+    "dorks": [
+      "intitle:\"index of\" \"port scan\"",
+      "intitle:\"index of\" \"open ports\"",
+      "intitle:\"index of\" \"port scanner\"",
+      "intitle:\"index of\" \"port scan results\"",
+      "intitle:\"index of\" \"port scan report\"",
+      "intitle:\"index of\" \"port scan log\"",
+      "intitle:\"index of\" \"port scan summary\"",
+      "intitle:\"index of\" \"port scan detail\"",
+      "intitle:\"index of\" \"port scan output\"",
+      "intitle:\"index of\" \"open port list\"",
+      "intitle:\"index of\" \"port checker\"",
+      "intitle:\"index of\" \"port viewer\"",
+      "intitle:\"index of\" \"port watcher\"",
+      "intitle:\"index of\" \"port monitor\""
+    ]
+  }
+  
