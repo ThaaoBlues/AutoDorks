@@ -169,7 +169,7 @@ def main(args):
             # loads dork to the query
             full_query = base_query + dork['query']
 
-            f.write(f"Query: {full_query}\n")
+            f.write(f"\n====Query: {full_query}\n")
 
 
             #urllib.parse.urlencode()
