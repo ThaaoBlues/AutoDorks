@@ -80,7 +80,7 @@ def google_search(url,headers) -> list:
     while result_index<len(results):
         
         if str(potential_links[link_index]["href"]).startswith("/url?"):
-            results[result_index]["url"] = str(potential_links[link_index]["href"])
+            results[result_index]["url"] = str(potential_links[link_index]["href"]).replace("/url?esrc=s&q=&rct=j&sa=U&url=","")
 
             # increments only if we find the link
             result_index += 1
@@ -175,7 +175,12 @@ def main(args):
                     headers={
                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
                 }):
-                    
+                    if args.check_404:
+
+                        # skip if 404 error returned by the link
+                        if get(result["url"]).status_code == 404:
+                            continue
+
                     f.write(dumps(
                         {
                             "title": result["title"],
@@ -206,6 +211,7 @@ if __name__ == '__main__':
     parser.add_argument('--open', '-o', action='store_true', help='Open search results in browser (optional)')
     parser.add_argument('--repo_url', '-r', type=str, default=json_repo_url, help="URL of the GitHub repository containing the JSON templates (optional)")
     parser.add_argument('--list_templates', '-ls', action='store_true', help='List all the templates locally availables.')
+    parser.add_argument('--check_404', '-c4', action='store_true', help='Will test each link and not add the ones returning 404. (slower)')
 
     args = parser.parse_args()
 

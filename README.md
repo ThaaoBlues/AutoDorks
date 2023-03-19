@@ -15,6 +15,7 @@ python google_dorks.py [-h] [--json_template JSON_TEMPLATE] [--url URL] [--open]
 --open or -o: Open search results in browser (optional).
 --repo_url or -r: The URL of the GitHub repository containing the JSON templates (optional).
 --list_templates or -ls : List all the availables json dorks templates under the folder ./templates
+--check_404 or -c4 : Test each links and don't write it in the report if it returns a 404 error. (much slower)
 
 The script generates a report file for each search, with the filename <template_type>_<website_url>.txt.
 
