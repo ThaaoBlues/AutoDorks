@@ -1,0 +1,27 @@
+{
+    "name": "Various APIs",
+    "description": "Searches for APIs related to the target website.",
+    "rating": "Low",
+    "queries": [
+        {
+            "query": "site:github.com inurl:api",
+            "description": "Searches for APIs related to the target domain on GitHub."
+        },
+        {
+            "query": "site:stackoverflow.com intext:api",
+            "description": "Searches for APIs related to the target domain on Stack Overflow."
+        },
+        {
+            "query": "site:swagger.io inurl:swagger.json",
+            "description": "Searches for APIs related to the target domain on Swagger Hub."
+        },
+        {
+            "query": "site:apis.guru",
+            "description": "Searches for APIs related to the target domain on APIs.guru directory."
+        },
+        {
+            "query": "site:apimetrics.io",
+            "description": "Searches for public APIs with names related to the target domain on APImetrics directory."
+        }
+    ]
+}

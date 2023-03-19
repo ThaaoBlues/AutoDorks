@@ -42,6 +42,12 @@
         {
             "query": "site:quora.com",
             "description": "Searches for Quora accounts with email addresses linked to the target domain."
+        },
+       
+        {
+            "query": "site:twitter.com OR site:instagram.com OR site:facebook.com OR site:linkedin.com OR site:pinterest.com OR site:tumblr.com OR site:reddit.com OR site:flickr.com OR site:myspace.com OR site:about.me OR site:delicious.com OR site:disqus.com OR site:deviantart.com OR site:dribbble.com OR site:goodreads.com OR site:gravatar.com OR site:pandora.com OR site:play.google.com OR site:plus.google.com OR site:soundcloud.com OR site:spotify.com OR site:stackoverflow.com OR site:vimeo.com OR site:youtube.com OR site:behance.net OR site:500px.com OR site:angel.co OR site:bitbucket.org OR site:blogspot.com OR site:blogger.com OR site:crunchbase.com OR site:dev.to OR site:etsy.com OR site:foursquare.com OR site:github.com OR site:gitlab.com OR site:imdb.com OR site:imgur.com OR site:instructables.com OR site:kickstarter.com OR site:medium.com OR site:mixcloud.com OR site:patreon.com OR site:quora.com OR site:reverbnation.com OR site:scribd.com OR site:slideshare.net OR site:soundclick.com OR site:tripadvisor.com OR site:wordpress.com OR site:xing.com",
+            "description": "Searches for social media accounts associated with the target person."
         }
+               
     ]
 }
