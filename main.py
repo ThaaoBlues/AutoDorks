@@ -22,30 +22,21 @@ json_repo_url = 'https://api.github.com/repos/thaaoblues/autodorks/contents/temp
 def download_json_templates(repo_url):
 
 
-    with urllib.request.urlopen(repo_url) as url:
+    # check if we have created the templates folder
+    if not path.exists("templates"):
+        mkdir("templates")
 
-        # check if we have created the templates folder
-        if not path.exists("templates"):
-            mkdir("templates")
+    data = get(repo_url).json()
 
-        data = loads(url.read().decode())
+    for file in data:
+        if file['name'].endswith('.json'):
+            filename = file['name']
 
-        for file in data:
-            if file['name'].endswith('.json'):
-                filename = file['name']
+            url = file['download_url']
+            data = get(url).text
 
-                url = file['download_url']
-                with urllib.request.urlopen(url) as url:
-                    data = url.read().decode()
-                    with open(f"templates/{filename}", 'w') as f:
-                        f.write(data)
-
-# Setup function to download JSON templates from the GitHub repository
-def setup():
-    print("Downloading JSON templates from GitHub repository...")
-    #download_json_templates(json_repo_url)
-    print("Done.")
-
+            with open(f"templates/{filename}", 'w') as f:
+                f.write(data)
 
 
 
@@ -53,20 +44,20 @@ def setup():
 # Function to extract the email address linked to a website
 def extract_email_address(url):
     try:
-        with urllib.request.urlopen(url) as response:
-            html = response.read().decode()
-            pattern = r'[\w\.-]+@[\w\.-]+'
-            match = re_search(pattern, html)
-            if match:
-                return match.group()
-            else:
-                return None
+        html = get(url).text
+        pattern = r'[\w\.-]+@[\w\.-]+'
+        match = re_search(pattern, html)
+        if match:
+            return match.group()
+        else:
+            return None
     except:
         return None
 
 
 def google_search(url,headers) -> list:
     
+    # don't forget the conset cookie to get rid of google consent prompt
     resp = get(url,headers=headers,cookies = {'CONSENT' : 'YES+'}).text
     soup = BeautifulSoup(resp,features="html.parser")
 
@@ -109,22 +100,20 @@ def main(args):
     print("[I] checking templates...")
     
     # Check if the JSON templates are present in the current directory
-    with urllib.request.urlopen(args.repo_url) as url:
 
+    data = get(args.repo_url).json()
 
-            data = loads(url.read().decode())
+    # loop throught all available templates 
+    # and trigger a full redownload if one is missing
+    for file in data:
+        if file['name'].endswith('.json'):
+            filename = file['name']
+            if not os.path.exists(f"templates/{filename}"):
+                
+                print("[I] found missing template, downloading...")
 
-            # loop throught all available templates 
-            # and trigger a full redownload if one is missing
-            for file in data:
-                if file['name'].endswith('.json'):
-                    filename = file['name']
-                    if not os.path.exists(f"templates/{filename}"):
-                        
-                        print("[I] found missing template, downloading...")
-
-                        download_json_templates(args.repo_url)
-                        break
+                download_json_templates(args.repo_url)
+                break
 
 
     # check if user just want to list availables templates

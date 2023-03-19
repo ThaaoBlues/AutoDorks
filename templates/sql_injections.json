@@ -5,42 +5,42 @@
     "dorks": [
         {
             "name": "Error Messages",
-            "query": "inurl:\"php?*=\" intext:\"SQL syntax\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"php?*=\" intext:\"SQL syntax\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "High"
         },
         {
             "name": "Error Messages (MySQL)",
-            "query": "inurl:\"phpmyadmin/\" intext:\"phpmyadmin\" intext:\"Welcome to phpMyAdmin\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"phpmyadmin/\" intext:\"phpmyadmin\" intext:\"Welcome to phpMyAdmin\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "High"
         },
         {
             "name": "SQL Injection in URL Parameters",
-            "query": "inurl:\"id=\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"id=\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "High"
         },
         {
             "name": "SQL Injection in Login Pages",
-            "query": "inurl:\"login.php\" intext:\"SQL syntax\" intext:\"username\" intext:\"password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"login.php\" intext:\"SQL syntax\" intext:\"username\" intext:\"password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "Critical"
         },
         {
             "name": "SQL Injection in Login Pages (MySQL)",
-            "query": "inurl:\"phplogin.php\" intext:\"mysql_num_rows\" intext:\"password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"phplogin.php\" intext:\"mysql_num_rows\" intext:\"password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "Critical"
         },
         {
             "name": "SQL Injection in Login Pages (MSSQL)",
-            "query": "inurl:\"login.aspx\" intext:\"User ID\" intext:\"Password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"login.aspx\" intext:\"User ID\" intext:\"Password\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "Critical"
         },
         {
             "name": "SQL Injection in Search Forms",
-            "query": "inurl:\"search.php\" intext:\"SQL syntax\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"search.php\" intext:\"SQL syntax\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "High"
         },
         {
             "name": "SQL Injection in Product Pages",
-            "query": "inurl:\"product.php?id=\" intext:\"SQL syntax\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault",
+            "query": "inurl:\"product.php?id=\" intext:\"SQL syntax\" intext:\"MySQL\" -stackoverflow -experts-exchange -github -sourceforge -sitepoint -LinuxQuestions -Developpez -Server-Fault -php.net",
             "rating": "High"
         }
     ]
