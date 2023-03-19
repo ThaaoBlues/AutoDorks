@@ -1,0 +1,32 @@
+{
+    "name": "PDF Access Dorks",
+    "description": "This template includes Google dorks for bypassing paywalls and accessing PDF documents.",
+    "rating": "Low",
+    "dorks": [
+        {
+            "name": "PDF Direct Download",
+            "query": "filetype:pdf site:scholar.google.com",
+            "rating": "Low"
+        },
+        {
+            "name": "PDF Direct Download (Bypass Paywall)",
+            "query": "filetype:pdf site:sci-hub.se",
+            "rating": "Low"
+        },
+        {
+            "name": "PDF Direct Download (Bypass Paywall 2)",
+            "query": "filetype:pdf site:libgen.rs",
+            "rating": "Low"
+        },
+        {
+            "name": "PDF Accessible via URL",
+            "query": "intitle:\"index of\" inurl:\"pdf\" site:example.com",
+            "rating": "Low"
+        },
+        {
+            "name": "PDF Accessible via URL (No Index)",
+            "query": "intitle:\"directory listing for\" inurl:\"pdf\" site:example.com",
+            "rating": "Low"
+        }
+    ]
+}

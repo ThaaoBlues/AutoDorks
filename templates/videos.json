@@ -1,0 +1,19 @@
+{
+    "dorks": [
+        {
+            "name": "Movie Files",
+            "query": "filetype:avi OR filetype:mkv OR filetype:mp4 OR filetype:wmv OR filetype:mov OR filetype:mpg",
+            "rating": "high"
+        },
+        {
+            "name": "Streaming Sites",
+            "query": "intitle:\"Streaming Server\" intext:\"Stream View\" intext:\"View Playlist\" -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)",
+            "rating": "critical"
+        },
+        {
+            "name": "Movie Streaming Links",
+            "query": "intitle:\"Index of\" inurl:ftp OR inurl:http OR inurl:https movie mkv OR avi OR mp4 OR wmv OR mov OR mpg",
+            "rating": "high"
+        }
+    ]
+}

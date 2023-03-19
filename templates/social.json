@@ -1,0 +1,47 @@
+{
+    "name": "Social Media Accounts",
+    "description": "Searches for social media accounts related to the target website.",
+    "rating": "Medium",
+    "dorks": [
+        {
+            "query": "site:facebook.com",
+            "description": "Searches for Facebook accounts with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:instagram.com",
+            "description": "Searches for Instagram accounts with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:twitter.com",
+            "description": "Searches for Twitter accounts with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:pinterest.com inurl:/profile/",
+            "description": "Searches for Pinterest profiles with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:linkedin.com",
+            "description": "Searches for LinkedIn profiles with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:github.com",
+            "description": "Searches for GitHub profiles with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:reddit.com",
+            "description": "Searches for Reddit accounts with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:tumblr.com",
+            "description": "Searches for Tumblr blogs with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:medium.com",
+            "description": "Searches for Medium accounts with email addresses linked to the target domain."
+        },
+        {
+            "query": "site:quora.com",
+            "description": "Searches for Quora accounts with email addresses linked to the target domain."
+        }
+    ]
+}

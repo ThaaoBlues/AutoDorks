@@ -1,0 +1,42 @@
+{
+    "name": "Common Content Discovery Techniques",
+    "description": "This template includes common content discovery techniques for Google dorks.",
+    "rating": "Low",
+    "dorks": [
+        {
+            "name": "Directory Listing",
+            "query": "intitle:index.of",
+            "rating": "Low"
+        },
+        {
+            "name": "File Type",
+            "query": "filetype:",
+            "rating": "Low"
+        },
+        {
+            "name": "Sensitive Files",
+            "query": "intitle:\"index of\" (htpasswd|passwd|password)",
+            "rating": "High"
+        },
+        {
+            "name": "Login Pages",
+            "query": "intitle:\"login page\"|\"admin login\"|\"login\" intitle:\"index of\"",
+            "rating": "High"
+        },
+        {
+            "name": "Exposed Config Files",
+            "query": "inurl:wp-config.php|inurl:configuration.php|inurl:.env",
+            "rating": "High"
+        },
+        {
+            "name": "Backup and Old Files",
+            "query": "intitle:\"index of\" \"backup\"",
+            "rating": "Low"
+        },
+        {
+            "name": "Database Files",
+            "query": "intitle:\"index of\" \"database\"",
+            "rating": "High"
+        }
+    ]
+}

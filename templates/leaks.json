@@ -1,0 +1,12 @@
+{
+    "name": "Leaked Data Discovery",
+    "description": "This template includes Google dorks for finding various types of data that could have been leaked.",
+    "rating": "High",
+    "dorks": [
+        {
+            "name": "Leaked Credentials",
+            "query": "intext:\"email\" intext:\"password\" site:pastebin.com OR site:paste2.org OR site:pastehtml.com OR site:slexy.org OR site:snipplr.com OR site:txt2day.com OR site:wikileaks.org OR site:paste.ee OR site:dumpz.org OR site:hastebin.com OR site:ideone.com OR site:justpaste.it OR site:paste.org OR site:slexy.org OR site:zerobin.net OR site:repl.it OR site:ghostbin.com OR site:privatepaste.com OR site:dpaste.com OR site:codepad.org OR site:codeshare.io OR site:heypasteit.com OR site:ipaste.eu OR site:paste.debian.net OR site:paste.org.ru OR site:codepen.io OR site:jsfiddle.net OR site:dotnetfiddle.net OR site:phpfiddle.org OR site:sqlfiddle.com OR site:tny.cz OR site:coderwall.com OR site:github.com OR site:bitbucket.org OR site:gitlab.com OR site:dev.azure.com OR site:app.asana.com OR site:trello.com OR site:monday.com OR site:docs.google.com OR site:drive.google.com OR site:slideshare.net OR site:scribd.com OR site:academia.edu OR site:dropbox.com OR site:mediafire.com OR site:box.com OR site:mega.nz OR site:4shared.com OR site:zippyshare.com OR site:anonfile.com OR site:we.tl OR site:wetransfer.com OR site:rghost.net OR site:datafilehost.com OR site:upload.ee OR site:uptobox.com OR site:upfile.mobi OR site:filefactory.com OR site:userscloud.com OR site:openload.co OR site:streamango.com OR site:oload.xyz OR site:oload.stream OR site:verystream.com OR site:rapidgator.net OR site:turbobit.net OR site:nitroflare.com OR site:file.al OR site:keep2share.cc OR site:depositfiles.com OR site:hitfile.net OR site:alfafile.net OR site:1fichier.com OR site:tusfiles.com OR site:uploaded.net OR site:share-online.biz OR site:rapidshare.com OR site:megaupload.com OR site:hotfile.com OR site:fileserve.com OR site:mediafire.com OR site:dropbox.com OR site:box.com OR site:docs.google.com OR site:drive.google.com OR site:slideshare",
+            "rating": "High"
+        }
+    ]
+}

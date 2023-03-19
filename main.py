@@ -1,12 +1,13 @@
 import os
-import json
+from json import dumps, loads
 import urllib
 from requests import get
 import urllib.request
-from googlesearch import search
 from webbrowser import open as web_open
 from re import search as re_search
 import argparse
+from time import sleep
+from bs4 import BeautifulSoup
 
 # Output file name
 output_file = 'google_dorks_search_results.txt'
@@ -23,7 +24,7 @@ def download_json_templates(repo_url):
     with urllib.request.urlopen(repo_url) as url:
 
 
-        data = json.loads(url.read().decode())
+        data = loads(url.read().decode())
 
         for file in data:
             if file['name'].endswith('.json'):
@@ -60,6 +61,40 @@ def extract_email_address(url):
         return None
 
 
+def google_search(url,headers) -> list:
+    
+    resp = get(url,headers=headers,cookies = {'CONSENT' : 'YES+'}).text
+    soup = BeautifulSoup(resp,features="html.parser")
+
+    results = []
+
+    for ele in soup.find_all("h3"):
+        results.append({
+            "url":"",
+            "title": ele.text,
+            "description":"desc"
+        })
+
+    
+    potential_links = soup.find_all("a",href=True)
+    
+    # two indexes as the list does not share the same length
+    link_index = 0
+    result_index = 0
+
+    while result_index<len(results):
+        
+        if str(potential_links[link_index]["href"]).startswith("/url?"):
+            results[result_index]["url"] = str(potential_links[link_index]["href"])
+
+            # increments only if we find the link
+            result_index += 1
+
+
+        link_index += 1
+
+
+    return results
 
 
 
@@ -69,11 +104,11 @@ def main(args):
 
     print("[I] checking templates...")
     
-    # Check if the JSON templates are present in the current directory
+    """# Check if the JSON templates are present in the current directory
     with urllib.request.urlopen(args.repo_url) as url:
 
 
-            data = json.loads(url.read().decode())
+            data = loads(url.read().decode())
 
             # loop throught all available templates 
             # and trigger a full redownload if one is missing
@@ -86,26 +121,26 @@ def main(args):
 
                         download_json_templates(args.repo_url)
                         break
-
+"""
 
 
     # Load the selected JSON template
     with open(args.json_template) as f:
-        dorks = json.load(f)
+        dorks = loads(f.read())
 
 
     # specific to domain-targeted dorks
     if args.url :
         # Extract the email address linked to the website
-        email_address = extract_email_address(args.rl)
+        email_address = extract_email_address(args.url)
 
-        query = f"insite:{args.url}"
+        base_query = f"insite:{args.url}"
 
         report_filename = f"{os.path.splitext(args.json_template)[0]}_{args.url}.txt"
     else:
-        query = ""
+        base_query = ""
         report_filename = f"{os.path.splitext(args.json_template)[0]}_no_target.txt"
-    
+        email_address = "only available in domain-target mode"
     
     print("[I] Making request and generating report...")
     print(f"[I] Future report name : {report_filename}")
@@ -113,27 +148,43 @@ def main(args):
     # Generate the report file
     with open(report_filename, 'w') as f:
 
-        f.write(f"Google Dorks Report for {url}\n\n")
+        f.write(f"Google Dorks Report \n\n")
         f.write(f"Email Address: {email_address}\n\n")
 
         for dork in dorks['dorks']:
             
             # loads dork to the query
-            query += dork['query']
+            full_query = base_query + dork['query']
 
-            f.write(f"Query: {query}\n")
+            f.write(f"Query: {full_query}\n")
 
-            search_url = f"https://www.google.com/search?q={query}"
+
+            #urllib.parse.urlencode()
+            search_url = "https://www.google.co.in/search?q={}".format(urllib.parse.quote_plus(f"{full_query} {args.query}"))
+
+            print(f"Search URL: {search_url}")
 
             f.write(f"Search URL: {search_url}\n\n")
 
             try:
-                for result in search(query, num_results=10):
-                    f.write(result+"\n")
+                # function to retrieve google result
+                for result in google_search(
+                    search_url,
+                    headers={
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
+                }):
+                    
+                    f.write(dumps(
+                        {
+                            "title": result["title"],
+                            "url":result["url"],
+                            "desc":result["description"]
+                        }
+                    )+"\n")
 
             except Exception as e:
-                print("[X] Error searching for query: " + query)
-
+                print("[X] Error searching for query: " + full_query+"\n"+"\t")
+                print(e)
 
             # open in browser if optionnal arg is present
             if args.open:
@@ -147,6 +198,7 @@ if __name__ == '__main__':
 
 
     parser = argparse.ArgumentParser(description='Automate Google Dorks')
+    parser.add_argument('query', help='The search query to use with the dorks')
     parser.add_argument('--json_template', '-t', type=str, default='commons.json', help='JSON template file containing the Google Dorks to use')
     parser.add_argument('--url', '-u', type=str, default=None, help='URL of the website to search for (optional)')
     parser.add_argument('--open', '-o', action='store_true', help='Open search results in browser (optional)')

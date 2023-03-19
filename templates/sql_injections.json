@@ -1,0 +1,47 @@
+{
+    "name": "SQL Injection Dorks",
+    "description": "This template includes Google dorks for SQL injection vulnerabilities.",
+    "rating": "Critical",
+    "dorks": [
+        {
+            "name": "Error Messages",
+            "query": "inurl:\"php?*=\" intext:\"SQL syntax\" -stackoverflow -experts-exchange",
+            "rating": "High"
+        },
+        {
+            "name": "Error Messages (MySQL)",
+            "query": "inurl:\"phpmyadmin/\" intext:\"phpmyadmin\" intext:\"Welcome to phpMyAdmin\" -github -sourceforge",
+            "rating": "High"
+        },
+        {
+            "name": "SQL Injection in URL Parameters",
+            "query": "inurl:\"id=\" intext:\"MySQL\"",
+            "rating": "High"
+        },
+        {
+            "name": "SQL Injection in Login Pages",
+            "query": "inurl:\"login.php\" intext:\"SQL syntax\" intext:\"username\" intext:\"password\" -github",
+            "rating": "Critical"
+        },
+        {
+            "name": "SQL Injection in Login Pages (MySQL)",
+            "query": "inurl:\"phplogin.php\" intext:\"mysql_num_rows\" intext:\"password\" -stackoverflow -github",
+            "rating": "Critical"
+        },
+        {
+            "name": "SQL Injection in Login Pages (MSSQL)",
+            "query": "inurl:\"login.aspx\" intext:\"User ID\" intext:\"Password\" -github",
+            "rating": "Critical"
+        },
+        {
+            "name": "SQL Injection in Search Forms",
+            "query": "inurl:\"search.php\" intext:\"SQL syntax\" intext:\"MySQL\"",
+            "rating": "High"
+        },
+        {
+            "name": "SQL Injection in Product Pages",
+            "query": "inurl:\"product.php?id=\" intext:\"SQL syntax\" intext:\"MySQL\"",
+            "rating": "High"
+        }
+    ]
+}
