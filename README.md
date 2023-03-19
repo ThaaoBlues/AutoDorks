@@ -4,11 +4,12 @@ This is a Python script that automates the process of searching Google for speci
 ## Usage
 To use this script, run the following command:
 ```shell
-python google_dorks.py [-h] [--json_template JSON_TEMPLATE] [--url URL] [--open] [--repo_url REPO_URL] [--template_type TEMPLATE_TYPE]
+python google_dorks.py [-h] [--json_template JSON_TEMPLATE] [--url URL] [--open] [--repo_url REPO_URL] [--template_type TEMPLATE_TYPE] [QUERY]
 ```
 
 ## The script takes the following arguments:
 
+query : the actual google search you want to make
 --json_template or -t: The JSON template file containing the Google Dorks to use (default: commons.json).
 --url or -u: The URL of the website to search for (optional).
 --open or -o: Open search results in browser (optional).
@@ -20,7 +21,7 @@ The script generates a report file for each search, with the filename <template_
 To search for documentation related to the website example.com using the documentation.json template, run the following command:
 
 ```shell
-python google_dorks.py --json_template documentation.json --url example.com
+python google_dorks.py -t documentation.json -u example.com "example enterprise"
 ```
 
 ## JSON Templates
