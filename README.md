@@ -23,7 +23,7 @@ The script generates a report file for each search, with the filename <template_
 To search for documentation related to the website example.com using the documentation.json template, run the following command:
 
 ```shell
-python google_dorks.py -t documentation.json -u example.com "example enterprise"
+python google_dorks.py -t documentation.json -u example.com -q "example enterprise"
 ```
 
 ## JSON Templates
