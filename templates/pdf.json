@@ -20,12 +20,12 @@
         },
         {
             "name": "PDF Accessible via URL",
-            "query": "intitle:\"index of\" inurl:\"pdf\" site:example.com",
+            "query": "intitle:\"index of\" inurl:\"pdf\"",
             "rating": "Low"
         },
         {
             "name": "PDF Accessible via URL (No Index)",
-            "query": "intitle:\"directory listing for\" inurl:\"pdf\" site:example.com",
+            "query": "intitle:\"directory listing for\" inurl:\"pdf\"",
             "rating": "Low"
         }
     ]

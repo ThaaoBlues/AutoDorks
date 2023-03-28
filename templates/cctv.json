@@ -1,0 +1,11 @@
+{
+    "name":"cctv",
+    "description":"template to find indexed online cameras",
+    "rating":"Moyen",
+    "dorks":[
+        {
+            "query":"intitle:\"Live View / - AXIS\" | inurl:\"view/viewer.shtml\" | inurl:\"/view/index.shtml\" | intitle:\"WebcamXP 5\" | intitle:\"Network Camera\" | intitle:\"IP Camera Viewer\" | intitle:\"Live NetSnap Cam-Server feed\" | intitle:\"Live View / - AXIS\" | intitle:\"Active Webcam Page\" | intitle:\"LiveJasmin.com - - Live Sex Show - Webcam Sex - Live Jasmin\" | inurl:\"ViewerFrame?Mode=\" | intitle:\"Toshiba Network Camera\" | intitle:\"Sony Netjuke\" | intitle:\"RealWizardRock.com - Webcam\" | intitle:\"Live Streaming Video by Ustream\" | inurl:\"axis-cgi/mjpg\" | intitle:\"MJPG Live Demo\" | inurl:\"control/userimage.html\" | intitle:\"Camera Control Pro 2 - Viewer\" | intitle:\"Vivotek Network Camera\" | intitle:\"SNC-RZ50 Home\" | intitle:\"Wireless IP Camera\" | intitle:\"TRENDnet SecurView Network Camera\" | intitle:\"TRENDnet TV-IP110 Internet Camera\" | intitle:\"WebcamXP 5\""
+        }
+    ]
+
+}

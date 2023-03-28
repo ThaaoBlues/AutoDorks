@@ -1,0 +1,10 @@
+{
+    "name": "Fichiers compressés",
+    "rating": "Moyen",
+    "dorks":[
+        {
+            "query": "intext:\"index of\" AND (rar OR zip OR 7z OR tar OR gz OR bz2 OR xz OR iso OR bin OR cue OR nrg OR dmg OR deb OR rpm OR pkg OR apk OR ipa OR appx OR appxbundle OR msi OR exe OR dll OR so OR dylib OR jar OR war OR ear OR hqx OR sit) -pinterest"
+        }
+    ]
+  }
+  

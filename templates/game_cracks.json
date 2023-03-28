@@ -1,0 +1,10 @@
+{
+    "name": "Cracks",
+    "rating": "Moyen",
+    "dorks":[
+        {
+            "query": "intext:(game|full_game) +(rar|zip|7zip) +crack"
+        }
+    ]
+  }
+  

@@ -117,7 +117,7 @@ class Engine():
 
 
 
-    # Main functionZ
+    # Main function
     def search(self) -> list:
 
         # list of results that is returned, idk if it could overflow with many results x')
@@ -226,9 +226,6 @@ class Engine():
                     print("[X] Error searching for query: " + full_query+"\n"+"\t")
                     print(e)
 
-
-
         print(f"Report generated: {report_filename}")
-
 
         return returned_results

@@ -1,0 +1,31 @@
+{
+    "name": "Cracks",
+    "rating": "Moyen",
+    "dorks":[
+        {
+            "query": "intext:(software|full software) +(rar|zip|7zip) +software +crack"
+        },
+        {
+            "query": "intitle:\"index of\"  (rar|zip|7z|iso) \"crack\"",
+            "name": "Cracked Software",
+            "rating": 4.5
+          },
+          {
+            "query": "intitle:\"index of\"  (rar|zip|7z|iso) \"keygen\"",
+            "name": "Keygen Software",
+            "rating": 4.2
+          },
+          {
+            "query": "intitle:\"index of\"  (rar|zip|7z|iso) \"patch\"",
+            "name": "Patched Software",
+            "rating": 4.0
+          },
+          {
+            "query": "intitle:\"index of\"  (rar|zip|7z|iso) \"license\"",
+            "name": "Licensed Software",
+            "rating": 4.3
+          }
+          
+    ]
+  }
+  

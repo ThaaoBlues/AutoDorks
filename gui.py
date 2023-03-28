@@ -1,19 +1,31 @@
 import engine as autodorks_engine
+from webui import webui
 
 
+def build_html(results):
+
+    page_content = "<html>"
+
+
+    for ele in results:
+
+        page_content += "<h3><a href='{}'>{}</a></h3>".format(ele["url"],ele["title"])
+
+    page_content += "</html>"
     
+    return page_content
 
 if __name__ == '__main__':
+
+    gui_handler = webui.window()
+
 
     # a simple class to pass arguments to the engine 
     # so the engine can be used in more than one context
     args = autodorks_engine.EngineArguments(
-        query=args.query,
-        json_template=args.json_template,
-        url=args.url,
-        repo_url=args.repo_url,
-        list_templates=args.list_templates,
-        check_404=args.check_404
+        query="grand theft auto",
+        json_template="game_cracks.json",
+        check_404=False
         )
     
     # create an instance of the engine
@@ -21,6 +33,11 @@ if __name__ == '__main__':
 
     # start the motor and make a lot of noises
     results = vroum_vroum.search()
+
+    gui_handler.show(build_html(results))
+    webui.wait()
+
+
     
 
 
