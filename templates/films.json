@@ -1,0 +1,46 @@
+{
+    "name": "Free Streaming Websites for Movies and TV Shows",
+    "description": "Dorks to find free streaming websites to watch movies and TV shows online",
+    "dorks": [
+        {
+            "query": "intitle:\"index of\" (mkv|mp4|avi) ",
+            "rating": "High",
+            "name": "Index of Shows"
+        },
+        {
+            "query": "intitle:\"watch online\" (mkv|mp4|avi) ",
+            "rating": "Medium",
+            "name": "Watch Online"
+        },
+        {
+            "query": "intext:\"streaming\" (mkv|mp4|avi)",
+            "rating": "High",
+            "name": "Show Streaming"
+        },
+        {
+            "query": "intitle:\"watch <show name> online free\" OR intext:\"watch <show name> online free\"",
+            "rating": "Medium",
+            "name": "Watch Online Free"
+        },
+        {
+            "query": "intext:\"watch online\"",
+            "rating": "Low",
+            "name": "Show Watch Online"
+        },
+        {
+            "query": "intext:\"full episodes\" OR intext:\"all episodes\"",
+            "rating": "Medium",
+            "name": "Full Episodes"
+        },
+        {
+            "query": "intext:\"free download\"",
+            "rating": "Low",
+            "name": "Free Download"
+        },
+        {
+            "query": "intext:\"streaming vf\"",
+            "rating": "Low",
+            "name": "Show Streaming VF"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Free Streaming Websites for Movies and TV Shows",
+    "description": "Dorks to find free streaming websites to watch movies and TV shows online",
+    
+    "dorks": [
+        {
+        "query": "intitle:\"regarder film en ligne\" OR intitle:\"streaming film en ligne\"",
+        "description": "Recherche des sites de streaming pour les films en ligne"
+        },
+        {
+        "query": "intitle:\"regarder série en ligne\" OR intitle:\"streaming série en ligne\"",
+        "description": "Recherche des sites de streaming pour les séries en ligne"
+        },
+        {
+        "query": "intext:\"regarder film en streaming\" OR intext:\"streaming film gratuit\"",
+        "description": "Recherche des sites avec 'regarder film en streaming' ou 'streaming film gratuit' dans le contenu"
+        },
+        {
+        "query": "intext:\"regarder série en streaming\" OR intext:\"streaming série gratuit\"",
+        "description": "Recherche des sites avec 'regarder série en streaming' ou 'streaming série gratuit' dans le contenu"
+        },
+        {
+        "query": "inurl:\"film-complet\" OR inurl:\"série-streaming\"",
+        "description": "Recherche des sites avec 'film-complet' ou 'série-streaming' dans l'URL"
+        }
+]
+}
+      

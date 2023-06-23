@@ -139,7 +139,7 @@ class Engine():
                     
                     print("[I] found missing template, downloading...")
 
-                    self.download_json_templates(self.args.repo_url)
+                    self.download_json_templates()
                     break
 
 
